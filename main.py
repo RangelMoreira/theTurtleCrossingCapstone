@@ -16,7 +16,7 @@ speed = 0.1
 player = Player()
 screen.listen()
 if game_is_on:
-    screen.onkey(player.move_forward, "Up")
+    screen.onkey(player.go_up, "Up")
     screen.onkey(player.move_back, 'Down')
 cars = []
 indexToGenerateCar = 0

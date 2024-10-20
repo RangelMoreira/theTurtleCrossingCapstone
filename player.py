@@ -10,21 +10,16 @@ class Player(Turtle):
         super().__init__()
         self.shape("turtle")
         self.penup()
-        self.position_y = -280
-        # self.shapesize(stretch_wid=1, stretch_len=1)
-        self.color("black")
-        self.goto(0, self.position_y)
-        self.move_speed = 0.1
-        self.left(90)
+        self.goto(STARTING_POSITION)
+        self.setheading(90)
 
-    def move_forward(self):
-        self.position_y += 20
-        self.goto(0, self.position_y)
+    def go_up(self):
+        self.forward(MOVE_DISTANCE)
 
     def move_back(self):
-        if self.position_y > -280:
-            self.position_y -= 20
-            self.goto(0, self.position_y)
+        new_y = self.ycor() - MOVE_DISTANCE
+        if new_y > -280:
+            self.backward(MOVE_DISTANCE)
 
     def go_to_begin(self):
         self.position_y = -280
