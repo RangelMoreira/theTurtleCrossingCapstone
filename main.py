@@ -15,14 +15,16 @@ screen.listen()
 screen.onkey(player.move_forward, "Up")
 screen.onkey(player.move_back, 'Down')
 cars = []
+indexToGenerateCar = 0
 
 while game_is_on:
-
-    random_integer = random.randint(-270, 270)
-    cars.append(CarManager(random_integer))
-    print(random_integer)
-    time.sleep(0.1)
+    indexToGenerateCar += 1
+    if indexToGenerateCar % 6 == 0:
+        random_integer = random.randint(-230, 230)
+        cars.append(CarManager(random_integer))
+    time.sleep(0.2)
     screen.update()
-    cars[0].move()
+    for car in cars:
+        car.move()
 
 screen.exitonclick()
