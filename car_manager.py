@@ -23,4 +23,4 @@ class CarManager(Turtle):
     def move(self):
         self.x_position -= STARTING_MOVE_DISTANCE
         self.goto(self.x_position, self.y_position)
-        
+
