@@ -10,7 +10,7 @@ class Player(Turtle):
         super().__init__()
         self.shape("turtle")
         self.penup()
-        self.position_y =  -280
+        self.position_y = -280
         # self.shapesize(stretch_wid=1, stretch_len=1)
         self.color("black")
         self.goto(0, self.position_y)
@@ -25,3 +25,7 @@ class Player(Turtle):
         if self.position_y > -280:
             self.position_y -= 20
             self.goto(0, self.position_y)
+
+    def go_to_begin(self):
+        self.position_y = -280
+        self.goto(0, self.position_y)
