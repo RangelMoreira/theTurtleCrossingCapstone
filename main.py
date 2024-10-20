@@ -22,9 +22,16 @@ while game_is_on:
     if indexToGenerateCar % 6 == 0:
         random_integer = random.randint(-230, 230)
         cars.append(CarManager(random_integer))
-    time.sleep(0.2)
-    screen.update()
+
     for car in cars:
+
+        # Detect collision
+        if player.distance(car) <= 20:
+            print(player.distance(car))
+            print("Game Over")
         car.move()
+
+    time.sleep(0.05)
+    screen.update()
 
 screen.exitonclick()
